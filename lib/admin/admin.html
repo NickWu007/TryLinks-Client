@@ -1,0 +1,28 @@
+<material-drawer class="tl-admin-nav" persistent #drawer="drawer">
+    <material-list *deferredContent>
+        <div group>
+            <div group class="mat-drawer-spacer"></div>
+            <material-list-item class="tl-nav-item">
+                <material-button (trigger)="gotoAddTutorial()">Add Tutorial</material-button>
+            </material-list-item>
+            <div group class="mdc-list-divider"></div>
+            <div label>Modify Existing Tutorial</div>
+            <material-list-item *ngFor="let header of headers; let i=index" class="tl-nav-item">
+                <material-button (trigger)="gotoModifyTutorial(header['tutorial_id'])" class="tl-tutorial-header">{{i+1}}. {{header['title']}}</material-button>
+            </material-list-item>
+        </div>
+    </material-list>
+</material-drawer>
+
+<material-content>
+    <div class="tl-admin-header">
+        <material-button icon class="material-drawer-button" (trigger)="drawer.toggle()">
+            <material-icon icon="menu"></material-icon>
+        </material-button>
+        <img class="tl-logo" src="img/logo.svg" alt="Links Logo">
+        <div class="tl-header-name">TryLinks Admin Mode</div>
+        <material-button dense (trigger)="gotoDashboard()">Dashboard</material-button>
+        <material-button dense class="tl-logout-button" (trigger)="logout()">Log out</material-button>
+    </div>
+    <router-outlet></router-outlet>
+</material-content>

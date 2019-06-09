@@ -1,0 +1,28 @@
+.tl-admin-nav, .drawer-content {
+    width: auto;
+}
+
+.tl-admin-header {
+    display: grid;
+    grid-template-columns: 40px 60px 4fr 1fr 1fr;
+}
+
+.tl-header-name {
+    line-height: 56px;
+}
+
+.tl-start-tab-panel {
+    color: black;
+    background-color: white;
+    margin: 0 20%;
+}
+
+.tl-logo {
+    height: 40px;
+    padding: 10% 10% 10% 20%;
+}
+
+.tl-nav-item {
+    padding-left: 0 !important;
+    height: 35px !important
+}
